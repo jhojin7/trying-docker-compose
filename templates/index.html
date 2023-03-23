@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TODO List</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+	<h1>Your TODO List</h1>
+	{% if logged_in %}
+	
+		<p>Currently logged in as {{ user.login }}. <a href="{{ logout_url }}">Logout</a></p>
+	{% else %}
+		<a href="{{ login_url }}"><img src="{{ url_for('static', path='github-login-button.png') }}" alt="Log in with GitHub"></a>
+	{% endif %}
+
+	<hr>
+
+	<form>
+		<label for="new_task">Add new task here:</label>
+		<input type="text" id="new_task" name="new_task">
+		<button type="submit">Add</button>
+	</form>
+
+	<hr>
+
+	<h2>All Tasks</h2>
+	<ul>
+		{% for task in tasks %}
+		<li>{{ task }}</li>
+		{% endfor %}
+	</ul>
+
+	<script src="{{ url_for('static', path='script.js') }}"></script>
+</body>
+</html>
+

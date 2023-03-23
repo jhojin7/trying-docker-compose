@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login with GitHub</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+	<h1>Login with GitHub</h1>
+	<a href="{{ github_url }}"><img src="{{ url_for('static', path='github-login-button.png') }}" alt="Log in with GitHub"></a>
+	<script src="{{ url_for('static', path='script.js') }}"></script>
+</body>
+</html>
+
